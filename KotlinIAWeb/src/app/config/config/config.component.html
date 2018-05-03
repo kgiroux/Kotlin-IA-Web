@@ -1,0 +1,22 @@
+<mat-card class="full-width">
+  <mat-card-content>
+      <div>
+        <h2>Neurone Configuration</h2>
+      </div>
+      <p>
+          <mat-form-field class="mid-width">
+            <input matInput placeholder="Bias" type="number" value="0.08" [(ngModel)]="config.biasValue">
+          </mat-form-field>
+          <mat-form-field class="mid-width">
+            <input matInput placeholder="Learning Rate" type="number" value="0.08" [(ngModel)]="config.learningRate">
+          </mat-form-field>
+          <mat-form-field class="mid-width">
+            <input matInput placeholder="Epoch Number" type="number" value="10" [(ngModel)]="config.epochNumber">
+          </mat-form-field>
+          <mat-form-field class="mid-width">
+            <input matInput placeholder="Entries Number" type="number" value="10" [(ngModel)]="config.entriesNumber">
+          </mat-form-field>
+          <mat-slide-toggle [(ngModel)]="weightDefined">Defined Weight</mat-slide-toggle>
+        </p>
+  </mat-card-content>
+</mat-card>
