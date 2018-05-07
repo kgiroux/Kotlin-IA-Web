@@ -12,4 +12,7 @@ export class PageNeuroneComponent implements OnInit {
   ngOnInit() {
   }
 
+  sendDataToNeurone() {
+
+  }
 }

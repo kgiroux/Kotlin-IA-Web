@@ -1,10 +1,8 @@
 import { Injectable } from '@angular/core';
 import { WebsocketService } from '../websocket.service';
-import { Observable } from 'rxjs/Observable';
-import { Observer } from 'rxjs/Observer';
-import { Subject } from 'rxjs/Subject';
 import { NeuroneResult } from './result/result.component';
 import { Neurone } from '../dto/Neurone';
+import { Observable, Observer, Subject } from 'rxjs';
 
 @Injectable()
 export class ResultService {

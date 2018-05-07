@@ -18,15 +18,12 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found/page-not-
 import { PageNeuroneModule } from './page-neurone/page-neurone.module';
 import { PageHomeModule } from './page-home/page-home.module';
 import { PageNotFoundModule } from './page-not-found/page-not-found.module';
-
-const appRoutes: Routes = [
-  { path: 'neurone', component: PageNeuroneComponent },
-  { path: '',      component: PageHomeComponent },
-  { path: '**', component: PageNotFoundComponent }
-];
-
-
-
+import { PageExtraComponent } from './page-extra/page-extra/page-extra.component';
+import { PageMlpComponent } from './page-mlp/page-mlp/page-mlp.component';
+import { PageMlpModule } from './page-mlp/page-mlp.module';
+import { PageExtraModule } from './page-extra/page-extra.module';
+import { LayoutModule } from '@angular/cdk/layout';
+import { NavigationModule } from './navigation/navigation.module';
 
 @NgModule({
   declarations: [
@@ -42,13 +39,13 @@ const appRoutes: Routes = [
     MatListModule,
     MatSidenavModule,
     MatToolbarModule,
+    NavigationModule,
+    PageExtraModule,
     PageNeuroneModule,
     PageHomeModule,
+    PageMlpModule,
     PageNotFoundModule,
-    RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
-    )
+    LayoutModule
   ],
   providers: [WebsocketService],
   bootstrap: [AppComponent]

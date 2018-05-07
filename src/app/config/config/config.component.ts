@@ -10,7 +10,7 @@ export class ConfigComponent implements OnInit {
 
   public config: Config;
   public weightDefined: boolean;
-  public weightValues;
+  public weightValues: Array<number>;
 
   constructor() {
     this.config = {
@@ -26,7 +26,12 @@ export class ConfigComponent implements OnInit {
     }
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.weightValues = new Array<number>();
+    for (let i = 0; i < this.config.entriesNumber; i++) {
+      this.weightValues.push(0.0);
+    }
+  }
 
   onChangeEntriesNumber(value: Event) {
     for (let i = 0; i < this.config.entriesNumber; i++) {
@@ -34,4 +39,7 @@ export class ConfigComponent implements OnInit {
     }
   }
 
+  changeWeight(value: number, event: any) {
+    this.weightValues[value] = parseInt(event.target.value, 10);
+  }
 }

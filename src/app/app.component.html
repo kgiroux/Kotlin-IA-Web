@@ -1,36 +1,65 @@
-<!--The content below is only a placeholder and can be replaced.-->
-  <mat-sidenav-container style="height: 100%;">
-      <mat-sidenav #sidenav align="start" mode="push" class="menu-sidenav">
-  
-        <mat-toolbar color="primary">
-          <span>Menu</span>
-          <button mat-icon-button  (click)="sidenav.close()" style="margin-left: auto">
-            <mat-icon>clear</mat-icon>
-          </button>
-        </mat-toolbar>
-  
-        <mat-nav-list class="menu-nav">
-          
-        </mat-nav-list>
-  
-        <div class="copyright">
-          <div>© Copyright {{copyrightYear}} Kévin Giroux</div>
-          <div>Kotlin IA Web v{{environmentVar.version}}</div>
-        </div>
-  
-      </mat-sidenav>
-  
-      <div class="main-container">
-        <mat-toolbar class="toolbar-header" color="primary" *ngIf="!isPresent">
-          <button mat-icon-button (click)="sidenav.open();" *ngIf="!isLogin">
-            <mat-icon>menu</mat-icon>
-          </button>
-          <span class="tabulation"> Welcome to {{ title }}!</span>
-        </mat-toolbar>
-        <div >
-          <router-outlet></router-outlet>
-        </div>
-      </div>
-  
-    </mat-sidenav-container>
+<app-navigation></app-navigation>
+
+<!--<mat-sidenav-container class="container-sidenav" style="height: 100%;">
+  <mat-sidenav #sidenav position="start" mode="push" class="menu-sidenav">
+
+    <mat-toolbar color="primary">
+      <span>Menu</span>
+      <button mat-icon-button  (click)="sidenav.close()" style="margin-left: auto">
+        <mat-icon>clear</mat-icon>
+      </button>
+    </mat-toolbar>
+
+    <mat-nav-list class="menu-nav">
+        <mat-list-item class="menu-item-nav" [routerLink]="" routerLinkActive="active"
+        (click)="sidenav.close()">
+        <mat-icon mat-list-icon>home</mat-icon>
+        <h4 mat-line>Home</h4>
+      </mat-list-item>
+
+      <mat-divider></mat-divider>
+
+      <mat-list-item class="menu-item-nav" [routerLink]="neurone" routerLinkActive="active"
+        (click)="sidenav.close()">
+        <mat-icon mat-list-icon>fiber_manual_record</mat-icon>
+        <h4 mat-line>Neurone</h4>
+      </mat-list-item>
+
+      <mat-divider></mat-divider>
+
+      <mat-list-item class="menu-item-nav" [routerLink]="mlp" routerLinkActive="active"
+        (click)="sidenav.close()">
+        <mat-icon mat-list-icon>bubble_chart</mat-icon>
+        <h4 mat-line>MLP</h4>
+      </mat-list-item>
+
+      <mat-divider></mat-divider>
+
+      <mat-list-item class="menu-item-nav" [routerLink]="extra" routerLinkActive="active"
+        (click)="sidenav.close()">
+        <mat-icon mat-list-icon>fiber_manual_record</mat-icon>
+        <h4 mat-line>Extra</h4>
+      </mat-list-item>
+
+    </mat-nav-list>
+
+    <div class="copyright">
+      <div>© Copyright {{copyrightYear}} Kévin Giroux</div>
+      <div>Kotlin IA Web v{{environmentVar.version}}</div>
+    </div>
+
+  </mat-sidenav>
+
+  <div class="main-container">
+    <mat-toolbar class="toolbar-header" color="primary" *ngIf="!isPresent">
+      <button mat-icon-button (click)="sidenav.open();" *ngIf="!isLogin">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span class="tabulation"> Welcome to {{ title }}!</span>
+    </mat-toolbar>
+    <div >
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</mat-sidenav-container>-->
   

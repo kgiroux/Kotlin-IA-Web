@@ -16,23 +16,24 @@
           <mat-form-field class="mid-width">
             <input matInput placeholder="Entries Number" type="number" value="10" (change)="onChangeEntriesNumber($event)" [(ngModel)]="config.entriesNumber">
           </mat-form-field>
-          <mat-slide-toggle [(ngModel)]="weightDefined">Defined Weight</mat-slide-toggle>
-          
+          <mat-slide-toggle [(ngModel)]="weightDefined">Defined Weight</mat-slide-toggle> 
       </p>
-      Weight : {{weightValues.length}}
-      <div>
-          <table>
-            <tbody>
-              <tr *ngFor="let weight on weightValues">
-                <td>Weight :</td>
-                <td>
-                  <mat-form-field class="mid-width">
-                    <input matInput placeholder="Weight" type="number" value="0.08" [(ngModel)]="weight">
-                  </mat-form-field>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+      <div *ngIf="weightDefined; else randomly">
+        <table>
+          <tbody>
+            <tr *ngFor="let weightItem of weightValues">
+              <td>Weight :</td>
+              <td>
+                <mat-form-field class="mid-width">
+                  <input matInput placeholder="Weight" type="number" value="0.08" (change)="changeWeight(weightValues.indexOf(weightItem), $event)">
+                </mat-form-field>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <ng-template #randomly>
+        Weights will be randomly generated
+      </ng-template>
   </mat-card-content>
 </mat-card>
