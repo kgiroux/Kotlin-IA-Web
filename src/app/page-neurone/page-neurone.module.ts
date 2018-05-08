@@ -5,7 +5,8 @@ import { DataModule } from '../data/data.module';
 import { ResultModule } from '../result/result.module';
 import { ConfigModule } from '../config/config.module';
 import { FormsModule } from '@angular/forms';
-import { MatCardModule, MatDividerModule, MatIconBase, MatIconModule } from '@angular/material';
+import { MatCardModule, MatDividerModule, MatIconBase, MatIconModule, MatButtonModule } from '@angular/material';
+import { PageNeuroneService } from './page-neurone.service';
 
 @NgModule({
   exports: [PageNeuroneComponent],
@@ -14,11 +15,13 @@ import { MatCardModule, MatDividerModule, MatIconBase, MatIconModule } from '@an
     ConfigModule,
     DataModule,
     FormsModule,
+    MatButtonModule,
     MatCardModule,
     MatDividerModule,
     MatIconModule,
     ResultModule
   ],
+  providers: [PageNeuroneService],
   declarations: [PageNeuroneComponent]
 })
 export class PageNeuroneModule { }

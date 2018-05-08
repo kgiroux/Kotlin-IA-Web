@@ -19,8 +19,6 @@ export class ResultService {
     this.lookUpForMessage().subscribe((message: MessageEvent) => {
       const value = message.data.split('|')[1];
       this.lastMessage = JSON.parse(value);
-      console.log(JSON.parse(message.data.split('|')[1]));
-      console.log(this.lastMessage);
     });
   }
 
@@ -34,7 +32,7 @@ export class ResultService {
     const observer = {
       next: (data: MessageEvent) => {
         if (this._webSocketService.getWebSocketIA().readyState === WebSocket.OPEN) {
-          console.log('PASSAGE PAR LE NEXT');
+        
         }
       }
     };

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Config } from '../../dto/Config';
 
 @Component({
@@ -8,7 +8,7 @@ import { Config } from '../../dto/Config';
 })
 export class ConfigComponent implements OnInit {
 
-  public config: Config;
+  @Input() public config: Config;
   public weightDefined: boolean;
   public weightValues: Array<number>;
 

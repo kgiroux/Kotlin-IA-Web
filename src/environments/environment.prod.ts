@@ -10,5 +10,8 @@ export const environment = {
     }
   },
   hostWebSocket: 'localhost',
+  hostWebService: 'localhost',
+  logWSIA: 'logsComputation',
+  configWS: 'config',
   production: true
 };

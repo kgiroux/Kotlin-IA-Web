@@ -2,7 +2,7 @@ import { Injectable, OnDestroy } from '@angular/core';
 import { environment } from '../environments/environment';
 
 
-class Environment {
+export class Environment {
   network: {
     protocols: {
       http: string;
@@ -14,7 +14,9 @@ class Environment {
     };
   };
   hostWebSocket: string;
+  hostWebService: string;
   logWSIA: string;
+  configWS: string;
 }
 
 
@@ -26,7 +28,6 @@ export class WebsocketService implements OnDestroy {
   private intervalClear;
   constructor() {
     this.environmentVar = environment;
-    console.log('Connexion');
     this.websocketIA = new WebSocket(`${this.environmentVar.network.protocols.ws}://${this.environmentVar.hostWebSocket}:${this.environmentVar.network.ports.ws}/${this.environmentVar.logWSIA}`);
     this.intervalClear = setInterval(this.heartBeat.bind(this), 2000);
 

@@ -24,6 +24,7 @@ import { PageMlpModule } from './page-mlp/page-mlp.module';
 import { PageExtraModule } from './page-extra/page-extra.module';
 import { LayoutModule } from '@angular/cdk/layout';
 import { NavigationModule } from './navigation/navigation.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { NavigationModule } from './navigation/navigation.module';
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
+    HttpClientModule,
     MatButtonModule,
     MatCardModule,
     MatDividerModule,
